@@ -1,0 +1,15 @@
+server:
+  port: 3000
+  error:
+    whitelabel:
+      enabled: true
+  servlet:
+    context-path: /
+
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 28017
+      database: todo
+      auto-index-creation: true
