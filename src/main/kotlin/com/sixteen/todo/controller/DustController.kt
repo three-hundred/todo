@@ -41,4 +41,13 @@ class DustController(
         dustService.deleteById(id)
         return ResponseEntity.noContent().build()
     }
+
+    @GetMapping("/image/{id}")
+    fun getRepresntativeDustImageLinkById(
+        @PathVariable id: String
+    ): ResponseEntity<String> {
+        return dustService.findRepresentativeImageUrlByIdOrNull(id).let {
+            ResponseEntity.ok(it)
+        }?: ResponseEntity.notFound().build()
+    }
 }

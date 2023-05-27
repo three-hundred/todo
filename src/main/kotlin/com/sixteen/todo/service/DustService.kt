@@ -12,4 +12,6 @@ interface DustService {
     fun deleteById(id: String)
 
     fun update(dust: Dust): Dust?
+
+    fun findRepresentativeImageUrlByIdOrNull(id: String): String?
 }

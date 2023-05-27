@@ -26,4 +26,7 @@ class DustServiceImpl(
         return dustRepository.save(dust)
     }
 
+    override fun findRepresentativeImageUrlByIdOrNull(id: String): String? = dustRepository.findDustImageUrlById(id)
+
+
 }
