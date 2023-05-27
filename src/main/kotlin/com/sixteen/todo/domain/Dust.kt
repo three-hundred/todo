@@ -10,19 +10,19 @@ data class Dust(
     @MongoId(FieldType.OBJECT_ID)
     val id: String,
     val name: String = "",
-    val ownerPercent: Double? = null,
-    val dustImage: DustImageLink? = null,
+    val ownerPercent: Double? = null,   // 먼지 통계, 몇% 가 소유중인
+    val dustImage: DustImageUrl? = null,
     val dustType: DustType? = null,
     val createCondition: CreateCondition? = null,   // 먼지 생성 조건
-    val openCondition: OpenCondition? = null,
-
+    val openCondition: OpenCondition? = null,       // 먼지 해금 조건
+    val details: String = "",
 ) {
 
 }
 
-data class DustImageLink(
-    val representativeImageLink: String,
-    val memorialImageLinkList: List<String>
+data class DustImageUrl(
+    val representativeImageUrl: String,
+    val memorialImageUrlList: List<String>
 )
 
 data class CreateCondition(
